@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet');
+@import url("https://fonts.googleapis.com/css?family=Do+Hyeon|La+Belle+Aurore");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #191919;
+  background: linear-gradient(rgba(241, 237, 237, 0.85), rgba(245, 242, 242, 0.85)), url("./images/bricks-brickwall.jpg");
+}
+
+.bell-fonts {
+  font-family: "La Belle Aurore", cursive;
+}
+
+.height-90,
+#header {
+  min-height: calc(100vh - 94px);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    background: url(./images/coffee-3.jpg) center/cover fixed no-repeat;
+  }
+}
+.banner {
+  z-index: 3;
+}
+
+.banner_title {
+  color: #e3b505;
+  font-size: 9rem;
+}
+
+.banner_social-icon {
+  display: inline-block;
+  text-decoration: none;
+  color: #191919;
+  border: 2px solid #191919;
+  border-radius: 50%;
+  padding: 5px;
+  transition: all 0.5s ease;
+}
+.banner_social-icon:hover {
+  background: #e3b505;
+  color: #191919;
+}
+
+.video_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video_item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navBtn {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  font-size: 3.5rem;
+  color: #e3b505;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

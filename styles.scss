@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|La+Belle+Aurore');
+//
+//
+$brightYellow: #e3b505;
+$darkBrown: #bb9457;
+$yellow: #f2b450;
+$brown: #382923;
+$black: #191919;
+$grey: #a9b2ac;
+//
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: $black;
+    background: linear-gradient(rgba(241, 237, 237, 0.85), rgba(245, 242, 242, 0.85)), url('./images/bricks-brickwall.jpg');
+}
+
+//global styles
+.bell-fonts {
+    font-family: 'La Belle Aurore', cursive;
+}
+
+//end of global styles
+//header
+// #header {
+//     //background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/avocado-cuisine-delicious-684965.jpg);
+//     // background-position: center;
+//     // background-size: cover;
+//     // background-attachment: fixed;
+//     // background-repeat: no-repeat;
+//     position: relative;
+// }
+.height-90,
+#header {
+    min-height: calc(100vh - 94px);
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        background: url(./images/coffee-3.jpg) center/cover fixed no-repeat;
+    }
+}
+
+.banner {
+    z-index: 3;
+}
+
+.banner_title {
+    color: $brightYellow;
+    font-size: 9rem;
+}
+
+.banner_social-icon {
+    display: inline-block;
+    text-decoration: none;
+    color: $black;
+    border: 2px solid $black;
+    border-radius: 50%;
+    padding: 5px;
+    transition: all 0.5s ease;
+    &:hover {
+        background: $brightYellow;
+        color: $black;
+    }
+}
+
+// ################video#################
+.video_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video_item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// #######################nav Btn#######################
+.navBtn {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 3.5rem;
+    color: $brightYellow;
+    cursor: pointer;
+}
