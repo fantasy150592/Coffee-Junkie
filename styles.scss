@@ -27,15 +27,21 @@ body {
 }
 
 //end of global styles
-//header
-// #header {
-//     //background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/avocado-cuisine-delicious-684965.jpg);
-//     // background-position: center;
-//     // background-size: cover;
-//     // background-attachment: fixed;
-//     // background-repeat: no-repeat;
-//     position: relative;
-// }
+// ###################preloader###################
+.preloader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $brightYellow;
+    z-index: 999;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+// #######################header####################
 .height-90,
 #header {
     min-height: calc(100vh - 94px);
@@ -109,5 +115,70 @@ body {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10rem;
+    background: rgba($color: $yellow, $alpha: 0.9);
+    z-index: 3;
+}
+
+.nav_links {
+    list-style-type: none;
+}
+
+.nav_single-link {
+    display: block;
+    color: $brown;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        background: $brown;
+        color: rgba($color: $yellow, $alpha: 0.9);
+        padding-left: 1.5rem;
+    }
+}
+
+.video_switch-container {
+    display: block;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    z-index: 3;
+}
+
+.video_switch {
+    position: relative;
+    width: 5rem;
+    background: $yellow;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.video_switch-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: $brown;
+    border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .video_switch-container {
+        display: none
     }
 }
