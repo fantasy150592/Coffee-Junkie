@@ -105,7 +105,6 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 10rem;
   background: rgba(242, 180, 80, 0.9);
   z-index: 3;
 }
@@ -127,6 +126,16 @@ body {
   background: #382923;
   color: rgba(242, 180, 80, 0.9);
   padding-left: 1.5rem;
+}
+
+.nav {
+  width: 0;
+  overflow: hidden;
+  transition: all 0.5s linear;
+}
+
+.nav-show {
+  width: 10rem;
 }
 
 .video_switch-container {
@@ -157,6 +166,11 @@ body {
   width: 50%;
   background: #382923;
   border-radius: 0.5rem;
+  transition: all 0.3s ease-out;
+}
+
+.btnSlide {
+  left: 50%;
 }
 
 @media screen and (max-width: 768px) {
