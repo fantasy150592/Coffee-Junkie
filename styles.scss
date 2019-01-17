@@ -26,6 +26,51 @@ body {
     font-family: 'La Belle Aurore', cursive;
 }
 
+// ####section padding####
+.section-padding {
+    padding: 3rem 0;
+}
+
+// ##########grid container########### 
+.grid-container {
+    max-width: 90vw;
+    margin: 2rem auto;
+    display: grid;
+    grid-row-gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .grid-container-medium-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-container {
+        max-width: 75vw;
+    }
+}
+
+// ############section##########
+.section-title {
+    padding: 1rem 0.5rem;
+}
+
+.section-title_name {
+    font-size: 3rem;
+}
+
+.section-title_underline {
+    background: $yellow;
+    width: 10rem;
+    height: 0.25rem;
+}
+
+.section-title_text {
+    letter-spacing: 0.1rem;
+    line-height: 1.5rem;
+    margin-top: 1rem;
+    color: $grey;
+}
+
 //end of global styles
 // ###################preloader###################
 .preloader {
@@ -42,9 +87,11 @@ body {
 }
 
 // #######################header####################
-.height-90,
 #header {
-    min-height: calc(100vh - 94px);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 80%;
+    position: relative;
 }
 
 @media screen and (max-width:768px) {
@@ -54,16 +101,23 @@ body {
 }
 
 .banner {
+    text-align: center;
     z-index: 3;
 }
 
 .banner_title {
     color: $brightYellow;
-    font-size: 9rem;
+    font-size: 4rem;
+}
+
+@media screen and (min-width:768px) {
+    .banner_title {
+        font-size: 9rem;
+    }
 }
 
 .banner_social-icon {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     color: $black;
     border: 2px solid $black;
@@ -74,6 +128,15 @@ body {
         background: $brightYellow;
         color: $black;
     }
+}
+
+.banner_icons {
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 2rem);
+    grid-column-gap: 0.5rem;
+    justify-content: center;
 }
 
 // ################video#################
@@ -197,5 +260,30 @@ body {
 @media screen and (max-width: 768px) {
     .video_switch-container {
         display: none
+    }
+}
+
+// ##############about################## 
+.about-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
+    grid-gap: 2rem;
+}
+
+.about_img-item {
+    display: block;
+    width: 100%;
+    display: block;
+    height: 100%;
+    border-radius: 0.25rem;
+}
+
+@media screen and (min-width:768px) {
+    .about_img-special {
+        order: -1;
+    }
+    .about-container {
+        grid-template-rows: 1fr 1fr;
     }
 }
