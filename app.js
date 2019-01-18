@@ -21,6 +21,7 @@ function eventListeners() {
     document.querySelector('.drink-form').addEventListener('submit', function(event) {
         event.preventDefault();
         const name = document.querySelector('.input-name').value;
+<<<<<<< HEAD
         const lastName = document.querySelector('.input-lastname').value;
         const email = document.querySelector('.input-email').value;
         let value = ui.checkEmpty(name, lastName, email);
@@ -30,6 +31,14 @@ function eventListeners() {
             console.log(customer);
             ui.addCustomer(customer);
             ui.showFeedback('customer added to the list', 'success');
+=======
+        const lastname = document.querySelector('.input-lastname').value;
+        const email = document.querySelector('.input-email').value;
+        let value = ui.checkEmpty(name, lastname, email);
+        //console.log(value);
+        if (value) {
+
+>>>>>>> 0f83adea69f8b17a8c5097219064a87843ffb774
         } else {
             ui.showFeedback('some form values empty', 'error');
         }
@@ -59,12 +68,17 @@ UI.prototype.videoControls = function() {
         }
     }
     //check for empty values
+<<<<<<< HEAD
 UI.prototype.checkEmpty = function(name, lastname, email) {
+=======
+UI.prototype.checkEmpty = function() {
+>>>>>>> 0f83adea69f8b17a8c5097219064a87843ffb774
     let result;
     if (name === '' || lastname === '' || email === '') {
         result = false;
     } else {
         result = true;
+<<<<<<< HEAD
     }
     return result;
 }
@@ -80,9 +94,13 @@ UI.prototype.showFeedback = function(text, type) {
         feedback.classList.add('error');
         feedback.innerText = text;
         this.removeAlert('error');
+=======
+>>>>>>> 0f83adea69f8b17a8c5097219064a87843ffb774
     }
+    return result;
 }
 
+<<<<<<< HEAD
 //remove Alert
 UI.prototype.removeAlert = function(type) {
     setTimeout(function() {
@@ -108,6 +126,13 @@ function Customer(name, lastname, email) {
     this.email = email;
 }
 
+=======
+UI.prototype.showFeedback = function(text, type) {
+    if (type === 'success') {} else if (type === 'error') {
+
+    }
+}
+>>>>>>> 0f83adea69f8b17a8c5097219064a87843ffb774
 
 
 // // Cach 2
