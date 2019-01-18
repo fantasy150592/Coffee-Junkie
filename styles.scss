@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet');
-@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|La+Belle+Aurore');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');
 //
 //
 $brightYellow: #e3b505;
@@ -285,5 +285,108 @@ body {
     }
     .about-container {
         grid-template-rows: 1fr 1fr;
+    }
+}
+
+// ##########drink section###########
+#drink {
+    background: $brown;
+    color: $brightYellow;
+    text-transform: capitalize;
+}
+
+.drink-form,
+.drink-card {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 70%;
+    grid-row-gap: 1.25rem;
+}
+
+.drink-form_feedback {
+    display: none;
+    border: 2px solid $brightYellow;
+    padding: 0.25rem;
+}
+
+.error {
+    display: block;
+    color: red;
+    border-color: red;
+}
+
+.success {
+    display: block;
+    color: green;
+    border-color: green;
+}
+
+.drink-form_title,
+.drin-card_title {
+    font-size: 3rem;
+}
+
+.input-name,
+.input-lastname,
+.input-email {
+    width: 100%;
+}
+
+.input-name,
+.input-lastname,
+.input-email,
+.input-submit {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(111, 87, 77, 0.6);
+    color: $darkBrown;
+    border: none;
+    outline: none;
+}
+
+.input-name::placeholder,
+.input-lastname::placeholder,
+.input-email::placeholder {
+    color: $darkBrown;
+    text-transform: capitalize;
+}
+
+.input-submit {
+    background: $yellow;
+    color: $black;
+    transition: all 0.5s linear;
+    cursor: pointer;
+    text-transform: uppercase;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.drink-card_list {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row-gap: 2rem;
+}
+
+.person {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    text-align: left;
+    grid-gap: 1rem;
+    border: 0.1rem solid rgba(111, 87, 77, 0.6);
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.person-thumbnail {
+    width: 5rem;
+    border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+    .drink-card_list {
+        grid-template-columns: 1fr 1fr;
     }
 }
