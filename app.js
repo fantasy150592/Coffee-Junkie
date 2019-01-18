@@ -18,6 +18,19 @@ function eventListeners() {
     document.querySelector('.video_switch').addEventListener('click', function() {
         ui.videoControls();
     })
+    document.querySelector('.drink-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.querySelector('.input-name').value;
+        const lastname = document.querySelector('.input-lastname').value;
+        const email = document.querySelector('.input-email').value;
+        let value = ui.checkEmpty(name, lastname, email);
+        //console.log(value);
+        if (value) {
+
+        } else {
+            ui.showFeedback('some form values empty', 'error');
+        }
+    })
 }
 
 function UI() {
@@ -33,16 +46,31 @@ UI.prototype.showNav = function() {
 }
 
 UI.prototype.videoControls = function() {
-    let btn = document.querySelector('.video_switch-btn');
-    if (!btn.classList.contains('btnSlide')) {
-        btn.classList.add('btnSlide');
-        document.querySelector('.video_item').pause();
-    } else {
-        btn.classList.remove('btnSlide');
-        document.querySelector('.video_item').play();
+        let btn = document.querySelector('.video_switch-btn');
+        if (!btn.classList.contains('btnSlide')) {
+            btn.classList.add('btnSlide');
+            document.querySelector('.video_item').pause();
+        } else {
+            btn.classList.remove('btnSlide');
+            document.querySelector('.video_item').play();
+        }
     }
+    //check for empty values
+UI.prototype.checkEmpty = function() {
+    let result;
+    if (name === '' || lastname === '' || email === '') {
+        result = false;
+    } else {
+        result = true;
+    }
+    return result;
 }
 
+UI.prototype.showFeedback = function(text, type) {
+    if (type === 'success') {} else if (type === 'error') {
+
+    }
+}
 
 
 // // Cach 2
