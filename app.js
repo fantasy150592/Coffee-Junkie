@@ -30,6 +30,8 @@ function eventListeners() {
             console.log(customer);
             ui.addCustomer(customer);
             ui.showFeedback('customer added to the list', 'success');
+            ui.clearFields();
+
         } else {
             ui.showFeedback('some form values empty', 'error');
         }
@@ -70,18 +72,16 @@ UI.prototype.checkEmpty = function(name, lastname, email) {
 }
 
 UI.prototype.showFeedback = function(text, type) {
+    const feedback = document.querySelector('.drink-form_feedback');
     if (type === 'success') {
-        let feedback = document.querySelector('.drink-form_feedback');
         feedback.classList.add('success');
         feedback.innerText = text;
         this.removeAlert('success');
     } else if (type === 'error') {
-        let feedback = document.querySelector('.drink-form_feedback');
         feedback.classList.add('error');
         feedback.innerText = text;
         this.removeAlert('error');
     }
-    return result;
 }
 
 //remove Alert
@@ -93,14 +93,23 @@ UI.prototype.removeAlert = function(type) {
 
 // add customer
 UI.prototype.addCustomer = function(customer) {
-    const images = [6, 7, 8, 9, 10];
+    const images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let random = Math.floor(Math.random() * images.length);
     console.log(random);
     const div = document.createElement('div');
     div.classList.add('person');
     div.innerHTML = `<img src="./images/coffee-${random}.jpg" alt="" class="person-thumbnail">
-    <h4 class="person-name">${Customer.name}</h4>
-    <h4 class="person-lastname">${Customer.lastname}</h4>`
+    <h4 class="person-name">${customer.name}</h4>
+    <h4 class="person-lastname">${customer.lastname}</h4>`
+    document.querySelector('.drink-card_list').appendChild(div);
+}
+
+
+// clear fields
+UI.prototype.clearFields = function() {
+    document.querySelector('.input-name').value = '';
+    document.querySelector('.input-lastname').value = '';
+    document.querySelector('.input-email').value = '';
 }
 
 function Customer(name, lastname, email) {
@@ -108,7 +117,6 @@ function Customer(name, lastname, email) {
     this.lastname = lastname;
     this.email = email;
 }
-
 
 
 // // Cach 2
