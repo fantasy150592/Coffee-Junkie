@@ -19,25 +19,39 @@ function eventListeners() {
         ui.videoControls();
     })
     document.querySelector('.drink-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const name = document.querySelector('.input-name').value;
-        const lastName = document.querySelector('.input-lastname').value;
-        const email = document.querySelector('.input-email').value;
-        let value = ui.checkEmpty(name, lastName, email);
-        //console.log(value);
-        if (value) {
-            let customer = new Customer(name, lastName, email)
-            console.log(customer);
-            ui.addCustomer(customer);
-            ui.showFeedback('customer added to the list', 'success');
-            ui.clearFields();
+            event.preventDefault();
+            const name = document.querySelector('.input-name').value;
+            const lastName = document.querySelector('.input-lastname').value;
+            const email = document.querySelector('.input-email').value;
+            let value = ui.checkEmpty(name, lastName, email);
+            //console.log(value);
+            if (value) {
+                let customer = new Customer(name, lastName, email)
+                console.log(customer);
+                ui.addCustomer(customer);
+                ui.showFeedback('customer added to the list', 'success');
+                ui.clearFields();
 
-        } else {
-            ui.showFeedback('some form values empty', 'error');
-        }
+            } else {
+                ui.showFeedback('some form values empty', 'error');
+            }
+        })
+        //display modal
+    const links = document.querySelectorAll('.work-item-icon');
+    //console.log(links);
+
+    links.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                ui.showModal(event)
+            })
+        })
+        // hide modal
+    document.querySelector('.work-modal_close').addEventListener('click', function() {
+        ui.closeModal();
     })
-}
 
+}
+//constructor function
 function UI() {
 
 }
@@ -112,6 +126,25 @@ UI.prototype.clearFields = function() {
     document.querySelector('.input-email').value = '';
 }
 
+// show modal
+
+UI.prototype.showModal = function(event) {
+        event.preventDefault();
+        if (event.target.parentElement.classList.contains('work-item-icon'));
+        let id = event.target.parentElement.dataset.id;
+
+        const modal = document.querySelector('.work-modal');
+        const modalItem = document.querySelector('.work-modal_item')
+
+        modal.classList.add('work-modal-show');
+        modalItem.style.backgroundImage = `url(images/coffee-${id}.jpg)`
+    }
+    // hide modal
+UI.prototype.closeModal = function() {
+    document.querySelector('.work-modal').classList.remove('work-modal-show');
+}
+
+//customer
 function Customer(name, lastname, email) {
     this.name = name;
     this.lastname = lastname;

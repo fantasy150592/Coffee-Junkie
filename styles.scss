@@ -447,3 +447,100 @@ body {
         grid-gap: 1rem;
     }
 }
+
+@media screen and (min-width: 992px) {
+    .work-container {
+        height: 100vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "one one two three" "one one four four" "five six seven seven" "eight nine seven seven"
+    }
+    .item-6 {
+        grid-area: one;
+    }
+    .item-7 {
+        grid-area: two;
+    }
+    .item-8 {
+        grid-area: three;
+    }
+    .item-9 {
+        grid-area: four;
+    }
+    .item-10 {
+        grid-area: five;
+    }
+    .item-11 {
+        grid-area: six;
+    }
+    .item-12 {
+        grid-area: seven;
+    }
+    .item-13 {
+        grid-area: eight;
+    }
+    .item-14 {
+        grid-area: nine;
+    }
+}
+
+// modal
+.work-modal {
+    display: none;
+}
+
+.work-modal-show {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-modal_item {
+    background: url('./images/coffee-11.jpg') center/cover;
+    height: 70vh;
+    width: 80vw;
+}
+
+@media screen and (min-width:768px) {
+    .work-modal_item {
+        height: 80vh;
+        width: 60vw;
+        border: 0.5rem solid $yellow;
+        border-radius: 0.4rem;
+    }
+}
+
+.work-modal_close {
+    position: fixed;
+    font-size: 3rem;
+    color: $brightYellow;
+    bottom: 5%;
+    right: 5%;
+    transition: color 0.5s linear;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+        color: red;
+    }
+}
+
+// contact section
+.contact-container {
+    max-width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-row-gap: 1rem;
+}
+
+.contact-info {
+    display: grid;
+    justify-content: center;
+}
